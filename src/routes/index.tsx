@@ -1,5 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, X, Menu, ShoppingCart, Zap, FileDown, Users, Quote, Star, Tag } from "lucide-react";
+import {
+  Check,
+  X,
+  Menu,
+  ShoppingCart,
+  Zap,
+  FileDown,
+  Users,
+  Quote,
+  Star,
+  Tag,
+  Timer,
+  SquareCheck,
+  ChevronDown,
+  Package,
+  Heart,
+} from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
 
 export const Route = createFileRoute("/")({
@@ -70,7 +86,76 @@ const testimonials = [
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
     name: "Lauren M.",
   },
+  {
+    text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
+    name: "Lilly S.",
+  },
 ];
+
+const includedList = [
+  "🟦 Activités de concentration et d'attention",
+  "🟩 Activités de renforcement de la mémoire",
+  "🟧 Formes et motifs",
+  "🟪 Séquences logiques",
+  "🟨 Tracé et motricité fine",
+  "🟫 Couleurs et associations",
+  "⬛ Coordination œil-main",
+  "🌀 Activités 100 % sans écran",
+  "✨ + TOUS les bonus offerts GRATUITEMENT (aujourd'hui seulement !)",
+];
+
+const includedExtras = [
+  "Programme numérique (accès immédiat)",
+  "Activités étape par étape",
+  "Aucun produit physique expédié",
+];
+
+const offerIncludes = [
+  "Accès immédiat",
+  "Plus de 100 activités imprimables",
+  "10 ressources bonus",
+  "Utilisation à vie",
+];
+
+const faqs = [
+  {
+    q: "Comment vais-je recevoir le produit ?",
+    a: "Juste après votre achat, vous recevrez un accès immédiat pour tout télécharger. Pas d'attente, pas de frais de port, vous pouvez commencer dès aujourd'hui.",
+  },
+  {
+    q: "Pour quel âge est-ce adapté ?",
+    a: "NeuroKids™ convient aux enfants de 3 à 14 ans. Les activités sont progressives, elles s'adaptent donc facilement au niveau de votre enfant.",
+  },
+  {
+    q: "Ai-je besoin d'une expérience d'enseignement ou d'une préparation spéciale ?",
+    a: "Pas du tout. Tout est conçu pour être simple, guidé et facile à suivre : n'importe quel parent peut le faire.",
+  },
+  {
+    q: "Et si mon enfant est très actif ou facilement distrait ?",
+    a: "Parfait : c'est exactement pour cela qu'il a été créé. NeuroKids™ aide les enfants à canaliser cette énergie de manière positive tout en développant leur concentration étape par étape.",
+  },
+  {
+    q: "Combien de temps avant de voir des résultats ?",
+    a: "La plupart des parents remarquent des changements en 3 à 7 jours : meilleure concentration, moins de frustration, mémoire améliorée, comportement plus calme. Chaque enfant est différent, mais les résultats arrivent généralement vite.",
+  },
+  {
+    q: "Ai-je besoin d'écrans ou d'internet ?",
+    a: "Non. Une fois téléchargé, tout est 100 % imprimable et totalement sans écran.",
+  },
+  {
+    q: "Combien de fois puis-je utiliser les activités ?",
+    a: "Autant de fois que vous le souhaitez. Vous bénéficiez d'un accès à vie : vous pouvez réutiliser et réimprimer les activités quand vous voulez.",
+  },
+  {
+    q: "Cela aide-t-il si mon enfant a un TDAH ou des difficultés d'apprentissage ?",
+    a: "De nombreux parents d'enfants qui ont du mal à se concentrer rapportent d'excellents résultats, car les activités sont courtes et captivantes, conçues pour améliorer la concentration, la mémoire et la logique, et utiles pour réduire la frustration. (Ce n'est pas un traitement médical, mais un outil de soutien puissant.)",
+  },
+  {
+    q: "Puis-je l'utiliser pour plus d'un enfant ?",
+    a: "Oui ! Vous l'achetez une fois et vous pouvez l'utiliser avec tous vos enfants.",
+  },
+];
+
 
 function Stars() {
   return (
@@ -377,7 +462,140 @@ function Index() {
             ))}
           </div>
         </section>
+        {/* Ce qu'il y a à l'intérieur */}
+        <section className="mt-14">
+          <ImageSlot label="Aperçu du contenu NeuroKids™" ratio="1 / 1" />
+          <h2 className="mt-10 font-display text-3xl leading-tight">
+            Tout ce que votre enfant reçoit avec <strong>NeuroKids™</strong>
+          </h2>
+          <p className="mt-5 text-xl font-bold">Plus de 100 activités incluses :</p>
+          <ul className="mt-5 space-y-4 text-lg text-muted-foreground">
+            {includedList.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+          <ul className="mt-6 space-y-4 text-lg text-muted-foreground">
+            {includedExtras.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Offre spéciale */}
+        <section className="mt-14">
+          <div className="relative">
+            <ImageSlot label="Enfant utilisant NeuroKids™" ratio="4 / 3" />
+            <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">
+              OFFRE À DURÉE LIMITÉE
+            </span>
+            <span className="absolute left-1/2 top-16 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-4 py-1.5 text-xs font-semibold shadow">
+              100+ activités + bonus GRATUITS
+            </span>
+            <span className="absolute bottom-12 right-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">
+              Aimé par plus de 3 000 parents
+            </span>
+            <span className="absolute bottom-3 left-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">
+              Téléchargement immédiat • Accès à vie • Sans écrans
+            </span>
+          </div>
+
+          <h2 className="mt-8 font-display text-3xl leading-tight">
+            🎁 <strong>Offre spéciale</strong> – aujourd'hui seulement
+          </h2>
+          <p className="mt-5 text-lg text-muted-foreground">
+            Obtenez NeuroKids™ + 10 bonus GRATUITS avant que le prix ne remonte.
+          </p>
+          <p className="mt-5 text-lg text-muted-foreground">Comprend :</p>
+          <ul className="mt-4 space-y-4 text-lg text-muted-foreground">
+            {offerIncludes.map((t) => (
+              <li key={t}>✓ {t}</li>
+            ))}
+          </ul>
+          <p className="mt-6 text-lg font-bold">
+            Le cerveau de votre enfant se développe à chaque seconde… chaque jour compte.
+          </p>
+        </section>
+
+        {/* Pourquoi choisir */}
+        <section className="mt-14 text-center">
+          <h2 className="font-display text-3xl leading-tight">POURQUOI CHOISIR NEUROKIDS™</h2>
+          <div className="mt-8 space-y-10">
+            {[
+              {
+                icon: Star,
+                t: "Des résultats visibles en quelques semaines",
+                s: "Améliore la concentration et l'attention",
+              },
+              {
+                icon: Zap,
+                t: "Boost de mémoire",
+                s: "Des activités qui renforcent la rétention et la compréhension",
+              },
+              {
+                icon: Timer,
+                t: "Économisez temps et argent",
+                s: "Des activités imprimables utilisables partout !",
+              },
+              {
+                icon: SquareCheck,
+                t: "Simple et efficace",
+                s: "Seulement 10 minutes par jour",
+              },
+            ].map(({ icon: Icon, t, s }) => (
+              <div key={t} className="flex flex-col items-center gap-3">
+                <Icon className="size-16 text-primary" strokeWidth={1.5} />
+                <h3 className="text-xl">{t}</h3>
+                <p className="text-muted-foreground">{s}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="mt-16">
+          <h2 className="text-center font-display text-2xl">Questions fréquentes</h2>
+          <div className="mt-6 divide-y divide-border border-y border-border">
+            {faqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium">
+                  {f.q}
+                  <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* Garantie */}
+        <section className="mt-14 text-center">
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { icon: Package, t: "Accès immédiat !" },
+              { icon: Heart, t: "Aimé par plus de 10 000 parents" },
+              { icon: Star, t: "Garantie 100 % sans risque" },
+            ].map(({ icon: Icon, t }) => (
+              <div key={t} className="flex flex-col items-center gap-2">
+                <Icon className="size-8 text-primary" strokeWidth={1.5} />
+                <span className="text-xs text-muted-foreground">{t}</span>
+              </div>
+            ))}
+          </div>
+          <h2 className="mt-10 font-display text-2xl font-bold">
+            Garantie 100 % tranquillité d'esprit
+          </h2>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Essayez NeuroKids™ pendant 7 jours.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Si vous ne voyez pas de différence, nous vous remboursons.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Aucun risque. Aucune question posée.
+          </p>
+        </section>
       </main>
+
     </div>
   );
 }
