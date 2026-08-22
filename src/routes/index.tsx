@@ -1,5 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, X, Menu, ShoppingCart, Zap, FileDown, Users, Quote, Star, Tag } from "lucide-react";
+import {
+  Check,
+  X,
+  Menu,
+  ShoppingCart,
+  Zap,
+  FileDown,
+  Users,
+  Quote,
+  Star,
+  Tag,
+  Timer,
+  SquareCheck,
+  ChevronDown,
+  Package,
+  Heart,
+} from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
 
 export const Route = createFileRoute("/")({
