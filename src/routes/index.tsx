@@ -70,7 +70,76 @@ const testimonials = [
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
     name: "Lauren M.",
   },
+  {
+    text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
+    name: "Lilly S.",
+  },
 ];
+
+const includedList = [
+  "🟦 Activités de concentration et d'attention",
+  "🟩 Activités de renforcement de la mémoire",
+  "🟧 Formes et motifs",
+  "🟪 Séquences logiques",
+  "🟨 Tracé et motricité fine",
+  "🟫 Couleurs et associations",
+  "⬛ Coordination œil-main",
+  "🌀 Activités 100 % sans écran",
+  "✨ + TOUS les bonus offerts GRATUITEMENT (aujourd'hui seulement !)",
+];
+
+const includedExtras = [
+  "Programme numérique (accès immédiat)",
+  "Activités étape par étape",
+  "Aucun produit physique expédié",
+];
+
+const offerIncludes = [
+  "Accès immédiat",
+  "Plus de 100 activités imprimables",
+  "10 ressources bonus",
+  "Utilisation à vie",
+];
+
+const faqs = [
+  {
+    q: "Comment vais-je recevoir le produit ?",
+    a: "Juste après votre achat, vous recevrez un accès immédiat pour tout télécharger. Pas d'attente, pas de frais de port, vous pouvez commencer dès aujourd'hui.",
+  },
+  {
+    q: "Pour quel âge est-ce adapté ?",
+    a: "NeuroKids™ convient aux enfants de 3 à 14 ans. Les activités sont progressives, elles s'adaptent donc facilement au niveau de votre enfant.",
+  },
+  {
+    q: "Ai-je besoin d'une expérience d'enseignement ou d'une préparation spéciale ?",
+    a: "Pas du tout. Tout est conçu pour être simple, guidé et facile à suivre : n'importe quel parent peut le faire.",
+  },
+  {
+    q: "Et si mon enfant est très actif ou facilement distrait ?",
+    a: "Parfait : c'est exactement pour cela qu'il a été créé. NeuroKids™ aide les enfants à canaliser cette énergie de manière positive tout en développant leur concentration étape par étape.",
+  },
+  {
+    q: "Combien de temps avant de voir des résultats ?",
+    a: "La plupart des parents remarquent des changements en 3 à 7 jours : meilleure concentration, moins de frustration, mémoire améliorée, comportement plus calme. Chaque enfant est différent, mais les résultats arrivent généralement vite.",
+  },
+  {
+    q: "Ai-je besoin d'écrans ou d'internet ?",
+    a: "Non. Une fois téléchargé, tout est 100 % imprimable et totalement sans écran.",
+  },
+  {
+    q: "Combien de fois puis-je utiliser les activités ?",
+    a: "Autant de fois que vous le souhaitez. Vous bénéficiez d'un accès à vie : vous pouvez réutiliser et réimprimer les activités quand vous voulez.",
+  },
+  {
+    q: "Cela aide-t-il si mon enfant a un TDAH ou des difficultés d'apprentissage ?",
+    a: "De nombreux parents d'enfants qui ont du mal à se concentrer rapportent d'excellents résultats, car les activités sont courtes et captivantes, conçues pour améliorer la concentration, la mémoire et la logique, et utiles pour réduire la frustration. (Ce n'est pas un traitement médical, mais un outil de soutien puissant.)",
+  },
+  {
+    q: "Puis-je l'utiliser pour plus d'un enfant ?",
+    a: "Oui ! Vous l'achetez une fois et vous pouvez l'utiliser avec tous vos enfants.",
+  },
+];
+
 
 function Stars() {
   return (
