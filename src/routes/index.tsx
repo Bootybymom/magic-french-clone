@@ -85,15 +85,22 @@ const testimonials = [
   {
     text: "Mon enfant avait du mal à se concentrer… maintenant il demande lui-même à faire ces activités tous les jours. Je ne l'ai jamais vu aussi motivé.",
     name: "Sarah F.",
+    photo: kid1.url,
+    avatar: av2.url,
   },
   {
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
     name: "Lauren M.",
+    photo: kid2.url,
+    avatar: av3.url,
   },
   {
     text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
     name: "Lilly S.",
+    photo: null,
+    avatar: av6.url,
   },
+
 ];
 
 const includedList = [
