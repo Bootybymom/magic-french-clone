@@ -223,14 +223,16 @@ function Index() {
               <span className="font-medium">Aimé par plus de 10 500 clients</span>
             </div>
             <div className="flex -space-x-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="size-8 shrink-0 rounded-full border-2 border-primary bg-muted"
-                  aria-hidden
+              {bandAvatars.map((src) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt=""
+                  className="size-8 shrink-0 rounded-full border-2 border-primary object-cover"
                 />
               ))}
             </div>
+
           </div>
 
           <h1 className="mt-6 font-display text-3xl leading-tight sm:text-4xl">
