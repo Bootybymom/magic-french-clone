@@ -18,6 +18,17 @@ import {
 } from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
 import { ProductGallery } from "@/components/ProductGallery";
+import logo from "@/assets/logo.png.asset.json";
+import av1 from "@/assets/av1.jpg.asset.json";
+import av2 from "@/assets/av2.jpg.asset.json";
+import av3 from "@/assets/av3.jpg.asset.json";
+import av4 from "@/assets/av4.jpg.asset.json";
+import av5 from "@/assets/av5.jpg.asset.json";
+import av6 from "@/assets/av6.jpg.asset.json";
+import kid1 from "@/assets/kid1.webp.asset.json";
+import kid2 from "@/assets/kid2.webp.asset.json";
+
+const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 import gal2 from "@/assets/gal2.png.asset.json";
 import gal8 from "@/assets/gal8.png.asset.json";
 
