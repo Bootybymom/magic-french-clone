@@ -51,14 +51,14 @@ export function ProductGallery() {
         </button>
       </div>
 
-      <div className="mt-3 grid grid-cols-4 gap-2">
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
         {images.map((img, i) => (
           <button
             key={img.url}
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Voir l'image ${i + 1}`}
-            className={`overflow-hidden rounded-xl border-2 transition ${
+            className={`w-16 shrink-0 overflow-hidden rounded-xl border-2 transition ${
               i === index ? "border-primary" : "border-border"
             }`}
           >
@@ -66,6 +66,7 @@ export function ProductGallery() {
           </button>
         ))}
       </div>
+
     </div>
   );
 }
