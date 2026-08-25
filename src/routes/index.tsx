@@ -17,6 +17,10 @@ import {
   Heart,
 } from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
+import { ProductGallery } from "@/components/ProductGallery";
+import gal2 from "@/assets/gal2.png.asset.json";
+import gal8 from "@/assets/gal8.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
