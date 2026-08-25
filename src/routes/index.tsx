@@ -18,6 +18,17 @@ import {
 } from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
 import { ProductGallery } from "@/components/ProductGallery";
+import logo from "@/assets/logo.png.asset.json";
+import av1 from "@/assets/av1.jpg.asset.json";
+import av2 from "@/assets/av2.jpg.asset.json";
+import av3 from "@/assets/av3.jpg.asset.json";
+import av4 from "@/assets/av4.jpg.asset.json";
+import av5 from "@/assets/av5.jpg.asset.json";
+import av6 from "@/assets/av6.jpg.asset.json";
+import kid1 from "@/assets/kid1.webp.asset.json";
+import kid2 from "@/assets/kid2.webp.asset.json";
+
+const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 import gal2 from "@/assets/gal2.png.asset.json";
 import gal8 from "@/assets/gal8.png.asset.json";
 
@@ -85,15 +96,22 @@ const testimonials = [
   {
     text: "Mon enfant avait du mal à se concentrer… maintenant il demande lui-même à faire ces activités tous les jours. Je ne l'ai jamais vu aussi motivé.",
     name: "Sarah F.",
+    photo: kid1.url,
+    avatar: av2.url,
   },
   {
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
     name: "Lauren M.",
+    photo: kid2.url,
+    avatar: av3.url,
   },
   {
     text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
     name: "Lilly S.",
+    photo: null,
+    avatar: av6.url,
   },
+
 ];
 
 const includedList = [
@@ -184,10 +202,10 @@ function Index() {
         <button aria-label="Menu" className="p-1 text-foreground">
           <Menu className="size-7" strokeWidth={1.5} />
         </button>
-        <div className="flex flex-col items-center">
-          <ImageSlot label="Logo" className="w-14" ratio="1 / 1" />
-          <span className="mt-0.5 font-display text-lg font-medium text-primary">NeuroKids</span>
+        <div className="flex items-center">
+          <img src={logo.url} alt="NeuroEnfants" className="h-12 w-auto object-contain" />
         </div>
+
         <button aria-label="Panier" className="p-1 text-foreground">
           <ShoppingCart className="size-7" strokeWidth={1.5} />
         </button>
@@ -205,14 +223,16 @@ function Index() {
               <span className="font-medium">Aimé par plus de 10 500 clients</span>
             </div>
             <div className="flex -space-x-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="size-8 shrink-0 rounded-full border-2 border-primary bg-muted"
-                  aria-hidden
+              {bandAvatars.map((src) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt=""
+                  className="size-8 shrink-0 rounded-full border-2 border-primary object-cover"
                 />
               ))}
             </div>
+
           </div>
 
           <h1 className="mt-6 font-display text-3xl leading-tight sm:text-4xl">
@@ -247,9 +267,12 @@ function Index() {
               </span>
             </div>
             <div className="mt-4 flex items-start gap-4">
-              <div className="size-20 shrink-0 overflow-hidden rounded-full">
-                <ImageSlot label="Photo" ratio="1 / 1" className="rounded-full" />
-              </div>
+              <img
+                src={av1.url}
+                alt="Alejandra R."
+                className="size-20 shrink-0 rounded-full object-cover"
+              />
+
               <p className="text-lg leading-relaxed text-muted-foreground">
                 « NeuroKids a été une bénédiction pour mon enfant. Je le vois plus concentré, plus
                 confiant et même enthousiaste à l'idée d'apprendre. Je n'aurais jamais imaginé qu'une
@@ -445,7 +468,19 @@ function Index() {
             {testimonials.map((t) => (
               <figure key={t.name} className="overflow-hidden rounded-2xl border border-border">
                 <div className="relative">
-                  <ImageSlot label="Photo enfant" ratio="4 / 3" className="rounded-none border-0" />
+                  {t.photo ? (
+                    <img
+                      src={t.photo}
+                      alt={`Enfant utilisant NeuroKids™ — avis de ${t.name}`}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  ) : (
+                    <ImageSlot
+                      label="Photo enfant"
+                      ratio="4 / 3"
+                      className="rounded-none border-0"
+                    />
+                  )}
                   <span className="absolute -bottom-6 right-5 flex size-14 items-center justify-center rounded-full bg-primary">
                     <Quote className="size-6 fill-primary-foreground text-primary-foreground" />
                   </span>
@@ -454,9 +489,8 @@ function Index() {
                   <Stars />
                   <p className="mt-4 text-lg text-muted-foreground">{t.text}</p>
                   <div className="mt-5 flex items-center justify-center gap-3 border-t border-border pt-4">
-                    <div className="size-9 overflow-hidden rounded-full">
-                      <ImageSlot label="" ratio="1 / 1" className="rounded-full" />
-                    </div>
+                    <img src={t.avatar} alt={t.name} className="size-9 rounded-full object-cover" />
+
                     <span className="font-semibold italic">{t.name}</span>
                   </div>
                 </figcaption>
