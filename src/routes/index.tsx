@@ -468,7 +468,19 @@ function Index() {
             {testimonials.map((t) => (
               <figure key={t.name} className="overflow-hidden rounded-2xl border border-border">
                 <div className="relative">
-                  <ImageSlot label="Photo enfant" ratio="4 / 3" className="rounded-none border-0" />
+                  {t.photo ? (
+                    <img
+                      src={t.photo}
+                      alt={`Enfant utilisant NeuroKids™ — avis de ${t.name}`}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  ) : (
+                    <ImageSlot
+                      label="Photo enfant"
+                      ratio="4 / 3"
+                      className="rounded-none border-0"
+                    />
+                  )}
                   <span className="absolute -bottom-6 right-5 flex size-14 items-center justify-center rounded-full bg-primary">
                     <Quote className="size-6 fill-primary-foreground text-primary-foreground" />
                   </span>
@@ -477,9 +489,8 @@ function Index() {
                   <Stars />
                   <p className="mt-4 text-lg text-muted-foreground">{t.text}</p>
                   <div className="mt-5 flex items-center justify-center gap-3 border-t border-border pt-4">
-                    <div className="size-9 overflow-hidden rounded-full">
-                      <ImageSlot label="" ratio="1 / 1" className="rounded-full" />
-                    </div>
+                    <img src={t.avatar} alt={t.name} className="size-9 rounded-full object-cover" />
+
                     <span className="font-semibold italic">{t.name}</span>
                   </div>
                 </figcaption>
