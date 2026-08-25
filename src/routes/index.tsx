@@ -267,9 +267,12 @@ function Index() {
               </span>
             </div>
             <div className="mt-4 flex items-start gap-4">
-              <div className="size-20 shrink-0 overflow-hidden rounded-full">
-                <ImageSlot label="Photo" ratio="1 / 1" className="rounded-full" />
-              </div>
+              <img
+                src={av1.url}
+                alt="Alejandra R."
+                className="size-20 shrink-0 rounded-full object-cover"
+              />
+
               <p className="text-lg leading-relaxed text-muted-foreground">
                 « NeuroKids a été une bénédiction pour mon enfant. Je le vois plus concentré, plus
                 confiant et même enthousiaste à l'idée d'apprendre. Je n'aurais jamais imaginé qu'une
