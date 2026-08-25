@@ -17,6 +17,10 @@ import {
   Heart,
 } from "lucide-react";
 import { ImageSlot } from "@/components/ImageSlot";
+import { ProductGallery } from "@/components/ProductGallery";
+import gal2 from "@/assets/gal2.png.asset.json";
+import gal8 from "@/assets/gal8.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -192,12 +196,8 @@ function Index() {
       <main className="mx-auto w-full max-w-2xl px-4 pb-24">
         {/* Galerie produit */}
         <section className="pt-4">
-          <ImageSlot label="Image produit principale" ratio="1 / 1" />
-          <div className="mt-3 grid grid-cols-4 gap-2">
-            {["Miniature 1", "Miniature 2", "Miniature 3", "Miniature 4"].map((l) => (
-              <ImageSlot key={l} label={l} ratio="1 / 1" />
-            ))}
-          </div>
+          <ProductGallery />
+
 
           <div className="mt-4 flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3">
             <div className="flex items-center gap-2 text-primary-foreground">
@@ -347,7 +347,13 @@ function Index() {
           </div>
 
           <div className="mt-8">
-            <ImageSlot label="Visuel des bonus offerts" ratio="4 / 3" />
+            <img
+              src={gal8.url}
+              alt="Tous les bonus offerts gratuitement avec NeuroKids™"
+              className="w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+
             <p className="mt-3 text-center font-display text-xl">
               Avec votre achat, vous recevez <strong>TOUS</strong> ces bonus <strong>GRATUITS</strong> !
             </p>
@@ -372,18 +378,13 @@ function Index() {
 
         {/* Pourquoi ça marche */}
         <section className="mt-14">
-          <div className="grid grid-cols-2 gap-1">
-            <ImageSlot label="Famille 1" ratio="4 / 3" />
-            <ImageSlot label="Famille 2" ratio="4 / 3" />
-            <ImageSlot label="Famille 3" ratio="4 / 3" />
-            <ImageSlot label="Famille 4" ratio="4 / 3" />
-          </div>
-          <div className="-mt-6 flex justify-center">
-            <div className="rounded-full bg-primary-soft px-5 py-2 text-center shadow-sm">
-              <div className="text-xs tracking-widest text-star">★★★★★</div>
-              <div className="text-sm font-bold">Approuvé par plus de 10 000 familles</div>
-            </div>
-          </div>
+          <img
+            src={gal2.url}
+            alt="Approuvé par plus de 10 000 familles"
+            className="w-full rounded-2xl object-cover"
+            loading="lazy"
+          />
+
 
           <h2 className="mt-10 font-display text-3xl leading-tight">
             Pourquoi <strong>NeuroKids™ fonctionne-t-il si vite ?</strong>
@@ -420,9 +421,10 @@ function Index() {
           <div className="mt-2 overflow-hidden rounded-2xl border border-border">
             {compareRows.map((row) => (
               <div key={row} className="grid grid-cols-[1.2fr_1fr_1fr] border-b border-border last:border-0">
-                <div className="bg-primary px-4 py-6 text-lg font-medium text-primary-foreground">
+                <div className="flex min-h-20 items-center bg-primary px-4 py-4 text-base font-medium leading-snug text-primary-foreground">
                   {row}
                 </div>
+
                 <div className="flex items-center justify-center bg-card">
                   <Check className="size-7 text-primary" strokeWidth={2.5} />
                 </div>
