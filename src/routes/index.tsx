@@ -202,10 +202,10 @@ function Index() {
         <button aria-label="Menu" className="p-1 text-foreground">
           <Menu className="size-7" strokeWidth={1.5} />
         </button>
-        <div className="flex flex-col items-center">
-          <ImageSlot label="Logo" className="w-14" ratio="1 / 1" />
-          <span className="mt-0.5 font-display text-lg font-medium text-primary">NeuroKids</span>
+        <div className="flex items-center">
+          <img src={logo.url} alt="NeuroEnfants" className="h-12 w-auto object-contain" />
         </div>
+
         <button aria-label="Panier" className="p-1 text-foreground">
           <ShoppingCart className="size-7" strokeWidth={1.5} />
         </button>
