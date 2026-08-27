@@ -56,7 +56,7 @@ function PurchaseNotification() {
     return () => clearInterval(interval);
   }, []);
 
-  const n = purchaseNotifications[index];
+  const n = purchaseNotifications[index]!;
 
   return (
     <div
