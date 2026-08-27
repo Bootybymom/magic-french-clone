@@ -27,6 +27,9 @@ import av5 from "@/assets/av5.jpg.asset.json";
 import av6 from "@/assets/av6.jpg.asset.json";
 import kid1 from "@/assets/kid1.webp.asset.json";
 import kid2 from "@/assets/kid2.webp.asset.json";
+import kid3 from "@/assets/kid3.webp.asset.json";
+import inside from "@/assets/inside.png.asset.json";
+import offer from "@/assets/offer.png.asset.json";
 
 const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 import gal2 from "@/assets/gal2.png.asset.json";
