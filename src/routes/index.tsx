@@ -97,19 +97,19 @@ const compareRows = [
 const testimonials = [
   {
     text: "Mon enfant avait du mal à se concentrer… maintenant il demande lui-même à faire ces activités tous les jours. Je ne l'ai jamais vu aussi motivé.",
-    name: "Sarah F.",
+    name: "Sophie F.",
     photo: kid1.url,
     avatar: av2.url,
   },
   {
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
-    name: "Lauren M.",
+    name: "Léa M.",
     photo: kid2.url,
     avatar: av3.url,
   },
   {
     text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
-    name: "Lilly S.",
+    name: "Manon S.",
     photo: kid3.url,
     avatar: av6.url,
   },
@@ -517,10 +517,6 @@ function Index() {
         <section className="mt-14">
           <div className="relative">
             <img src={offer.url} alt="Enfant utilisant NeuroEnfants™" className="aspect-[4/3] w-full rounded-2xl object-cover" />
-            <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">{'\n'}</span>
-            <span className="absolute left-1/2 top-16 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-4 py-1.5 text-xs font-semibold shadow">{'\n'}</span>
-            <span className="absolute bottom-12 right-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
-            <span className="absolute bottom-3 left-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
           </div>
 
           <h2 className="mt-8 font-display text-3xl leading-tight">
