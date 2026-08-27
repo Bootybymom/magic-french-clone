@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Check,
@@ -28,9 +29,48 @@ import kid1 from "@/assets/kid1.webp.asset.json";
 import kid2 from "@/assets/kid2.webp.asset.json";
 import kid3 from "@/assets/kid3.webp.asset.json";
 import inside from "@/assets/inside.png.asset.json";
-import offer from "@/assets/offer.png.asset.json";
+import offer from "@/assets/offer2.png.asset.json";
 
 const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
+
+const purchaseNotifications = [
+  { name: "Élodie T.", avatar: av1.url, time: "il y a 2 min" },
+  { name: "Chloé B.", avatar: av2.url, time: "il y a 5 min" },
+  { name: "Inès M.", avatar: av3.url, time: "il y a 7 min" },
+  { name: "Clara D.", avatar: av4.url, time: "il y a 9 min" },
+  { name: "Mathilde G.", avatar: av5.url, time: "il y a 12 min" },
+];
+
+function PurchaseNotification() {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % purchaseNotifications.length);
+        setVisible(true);
+      }, 400);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const n = purchaseNotifications[index]!;
+
+  return (
+    <div
+      className={`fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
+      <img src={n.avatar} alt={n.name} className="size-10 rounded-full object-cover" />
+      <div className="text-xs">
+        <p className="font-semibold">{n.name} vient d'acheter</p>
+        <p className="text-muted-foreground">le plan à 12,90 € · {n.time}</p>
+      </div>
+      <Heart className="size-4 fill-primary text-primary" />
+    </div>
+  );
+}
 import gal2 from "@/assets/gal2.png.asset.json";
 import gal8 from "@/assets/gal8.png.asset.json";
 
@@ -195,14 +235,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Notification d'achat */}
-      <div className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg">
-        <img src={av1.url} alt="Camille D." className="size-10 rounded-full object-cover" />
-        <div className="text-xs">
-          <p className="font-semibold">Camille D. vient d'acheter</p>
-          <p className="text-muted-foreground">le plan à 12,90 € · il y a 2 min</p>
-        </div>
-        <Heart className="size-4 fill-primary text-primary" />
-      </div>
+      <PurchaseNotification />
 
       {/* Barre d'annonce */}
       <div className="overflow-hidden bg-primary py-2.5 text-center text-sm font-bold text-primary-foreground sm:text-base">
@@ -526,7 +559,7 @@ function Index() {
         {/* Offre spéciale */}
         <section className="mt-14">
           <div className="relative">
-            <img src={offer.url} alt="Enfant utilisant NeuroEnfants™" className="aspect-[4/3] w-full rounded-2xl object-cover" />
+            <img src={offer.url} alt="Offre à durée limitée NeuroEnfants™" className="w-full rounded-2xl" />
           </div>
 
           <h2 className="mt-8 font-display text-3xl leading-tight">
