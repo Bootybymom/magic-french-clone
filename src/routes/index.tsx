@@ -16,7 +16,6 @@ import {
   Package,
   Heart,
 } from "lucide-react";
-import { ImageSlot } from "@/components/ImageSlot";
 import { ProductGallery } from "@/components/ProductGallery";
 import logo from "@/assets/logo.png.asset.json";
 import av1 from "@/assets/av1.jpg.asset.json";
@@ -27,6 +26,9 @@ import av5 from "@/assets/av5.jpg.asset.json";
 import av6 from "@/assets/av6.jpg.asset.json";
 import kid1 from "@/assets/kid1.webp.asset.json";
 import kid2 from "@/assets/kid2.webp.asset.json";
+import kid3 from "@/assets/kid3.webp.asset.json";
+import inside from "@/assets/inside.png.asset.json";
+import offer from "@/assets/offer.png.asset.json";
 
 const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 import gal2 from "@/assets/gal2.png.asset.json";
@@ -36,13 +38,13 @@ import gal8 from "@/assets/gal8.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NeuroKids™ — +100 activités pour l'attention et la concentration" },
+      { title: "NeuroEnfants™ — +100 activités pour l'attention et la concentration" },
       {
         name: "description",
         content:
-          "NeuroKids™ Focus System : plus de 100 activités imprimables pour aider votre enfant à se concentrer, apprendre et gagner en confiance en 10 minutes par jour.",
+          "NeuroEnfants™ Focus System : plus de 100 activités imprimables pour aider votre enfant à se concentrer, apprendre et gagner en confiance en 10 minutes par jour.",
       },
-      { property: "og:title", content: "NeuroKids™ Focus System — Concentration par le jeu" },
+      { property: "og:title", content: "NeuroEnfants™ Focus System — Concentration par le jeu" },
       {
         property: "og:description",
         content:
@@ -108,7 +110,7 @@ const testimonials = [
   {
     text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
     name: "Lilly S.",
-    photo: null,
+    photo: kid3.url,
     avatar: av6.url,
   },
 
@@ -146,7 +148,7 @@ const faqs = [
   },
   {
     q: "Pour quel âge est-ce adapté ?",
-    a: "NeuroKids™ convient aux enfants de 3 à 14 ans. Les activités sont progressives, elles s'adaptent donc facilement au niveau de votre enfant.",
+    a: "NeuroEnfants™ convient aux enfants de 3 à 14 ans. Les activités sont progressives, elles s'adaptent donc facilement au niveau de votre enfant.",
   },
   {
     q: "Ai-je besoin d'une expérience d'enseignement ou d'une préparation spéciale ?",
@@ -154,7 +156,7 @@ const faqs = [
   },
   {
     q: "Et si mon enfant est très actif ou facilement distrait ?",
-    a: "Parfait : c'est exactement pour cela qu'il a été créé. NeuroKids™ aide les enfants à canaliser cette énergie de manière positive tout en développant leur concentration étape par étape.",
+    a: "Parfait : c'est exactement pour cela qu'il a été créé. NeuroEnfants™ aide les enfants à canaliser cette énergie de manière positive tout en développant leur concentration étape par étape.",
   },
   {
     q: "Combien de temps avant de voir des résultats ?",
@@ -236,7 +238,7 @@ function Index() {
           </div>
 
           <h1 className="mt-6 font-display text-3xl leading-tight sm:text-4xl">
-            NeuroKids™ +100 activités pour booster l'attention, la concentration et
+            NeuroEnfants™ +100 activités pour booster l'attention, la concentration et
             l'apprentissage
           </h1>
         </section>
@@ -274,7 +276,7 @@ function Index() {
               />
 
               <p className="text-lg leading-relaxed text-muted-foreground">
-                « NeuroKids a été une bénédiction pour mon enfant. Je le vois plus concentré, plus
+                « NeuroEnfants a été une bénédiction pour mon enfant. Je le vois plus concentré, plus
                 confiant et même enthousiaste à l'idée d'apprendre. Je n'aurais jamais imaginé qu'une
                 chose si simple puisse faire une telle différence dans nos après-midis. Je le
                 recommande du fond du cœur. »
@@ -283,7 +285,7 @@ function Index() {
           </div>
 
           <div className="mt-6 flex flex-wrap items-baseline gap-3">
-            <span className="font-display text-3xl font-bold text-primary">29,99 €</span>
+            <span className="font-display text-3xl font-bold text-primary">7,90 €</span>
             <span className="text-2xl font-bold text-muted-foreground line-through">89,97 €</span>
           </div>
           <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
@@ -300,11 +302,11 @@ function Index() {
             <label className="flex cursor-pointer items-center gap-4 rounded-xl border border-primary/40 bg-primary-soft/40 p-5">
               <span className="size-5 shrink-0 rounded-full border-2 border-primary" />
               <span className="flex-1">
-                <span className="block text-lg font-bold">NeuroKids Focus System</span>
+                <span className="block text-lg font-bold">NeuroEnfants Focus System</span>
                 <span className="block text-muted-foreground">Économisez 59,98 €</span>
               </span>
               <span className="text-right">
-                <span className="block text-xl font-bold text-primary">29,99 €</span>
+                <span className="block text-xl font-bold text-primary">7,90 €</span>
                 <span className="block text-muted-foreground line-through">89,97 €</span>
               </span>
             </label>
@@ -324,7 +326,7 @@ function Index() {
                   <span className="block text-muted-foreground">Économisez 134,96 €</span>
                 </span>
                 <span className="text-right">
-                  <span className="block text-xl font-bold text-primary">44,99 €</span>
+                  <span className="block text-xl font-bold text-primary">12,90 €</span>
                   <span className="block text-muted-foreground line-through">179,94 €</span>
                 </span>
               </label>
@@ -372,7 +374,7 @@ function Index() {
           <div className="mt-8">
             <img
               src={gal8.url}
-              alt="Tous les bonus offerts gratuitement avec NeuroKids™"
+              alt="Tous les bonus offerts gratuitement avec NeuroEnfants™"
               className="w-full rounded-xl object-cover"
               loading="lazy"
             />
@@ -395,7 +397,7 @@ function Index() {
             ))}
           </ul>
           <p className="mt-6 text-lg font-bold">
-            C'est exactement ce que NeuroKids™ fait pour eux.
+            C'est exactement ce que NeuroEnfants™ fait pour eux.
           </p>
         </section>
 
@@ -410,7 +412,7 @@ function Index() {
 
 
           <h2 className="mt-10 font-display text-3xl leading-tight">
-            Pourquoi <strong>NeuroKids™ fonctionne-t-il si vite ?</strong>
+            Pourquoi <strong>NeuroEnfants™ fonctionne-t-il si vite ?</strong>
           </h2>
           <ul className="mt-6 space-y-4 text-lg text-muted-foreground">
             {whyList.map((t) => (
@@ -426,26 +428,28 @@ function Index() {
         {/* Comparatif */}
         <section className="mt-14">
           <h2 className="text-center font-display text-3xl leading-tight">
-            Avant vs Après NeuroKids™
+            Avant vs Après NeuroEnfants™
           </h2>
           <div className="mt-6 grid grid-cols-[1.2fr_1fr_1fr] items-end gap-y-0 text-center text-sm font-bold">
             <div />
             <div>
               Avec
               <br />
-              NeuroKids™
+              NeuroEnfants™
             </div>
             <div>
               Sans
               <br />
-              NeuroKids™
+              NeuroEnfants™
             </div>
           </div>
           <div className="mt-2 overflow-hidden rounded-2xl border border-border">
             {compareRows.map((row) => (
               <div key={row} className="grid grid-cols-[1.2fr_1fr_1fr] border-b border-border last:border-0">
-                <div className="flex min-h-20 items-center bg-primary px-4 py-4 text-base font-medium leading-snug text-primary-foreground">
-                  {row}
+                <div className="flex min-h-20 items-center py-2 pr-3">
+                  <span className="flex min-h-16 w-full items-center rounded-xl bg-primary px-4 py-3 text-base font-medium leading-snug text-primary-foreground">
+                    {row}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-center bg-card">
@@ -468,19 +472,11 @@ function Index() {
             {testimonials.map((t) => (
               <figure key={t.name} className="overflow-hidden rounded-2xl border border-border">
                 <div className="relative">
-                  {t.photo ? (
-                    <img
-                      src={t.photo}
-                      alt={`Enfant utilisant NeuroKids™ — avis de ${t.name}`}
-                      className="aspect-[4/3] w-full object-cover"
-                    />
-                  ) : (
-                    <ImageSlot
-                      label="Photo enfant"
-                      ratio="4 / 3"
-                      className="rounded-none border-0"
-                    />
-                  )}
+                  <img
+                    src={t.photo}
+                    alt={`Enfant utilisant NeuroEnfants™ — avis de ${t.name}`}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
                   <span className="absolute -bottom-6 right-5 flex size-14 items-center justify-center rounded-full bg-primary">
                     <Quote className="size-6 fill-primary-foreground text-primary-foreground" />
                   </span>
@@ -500,9 +496,9 @@ function Index() {
         </section>
         {/* Ce qu'il y a à l'intérieur */}
         <section className="mt-14">
-          <ImageSlot label="Aperçu du contenu NeuroKids™" ratio="1 / 1" />
+          <img src={inside.url} alt="Aperçu du contenu NeuroEnfants™" className="aspect-square w-full rounded-2xl object-cover" />
           <h2 className="mt-10 font-display text-3xl leading-tight">
-            Tout ce que votre enfant reçoit avec <strong>NeuroKids™</strong>
+            Tout ce que votre enfant reçoit avec <strong>NeuroEnfants™</strong>
           </h2>
           <p className="mt-5 text-xl font-bold">Plus de 100 activités incluses :</p>
           <ul className="mt-5 space-y-4 text-lg text-muted-foreground">
@@ -520,7 +516,7 @@ function Index() {
         {/* Offre spéciale */}
         <section className="mt-14">
           <div className="relative">
-            <ImageSlot label="Enfant utilisant NeuroKids™" ratio="4 / 3" />
+            <img src={offer.url} alt="Enfant utilisant NeuroEnfants™" className="aspect-[4/3] w-full rounded-2xl object-cover" />
             <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">
               OFFRE À DURÉE LIMITÉE
             </span>
@@ -539,7 +535,7 @@ function Index() {
             🎁 <strong>Offre spéciale</strong> – aujourd'hui seulement
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Obtenez NeuroKids™ + 10 bonus GRATUITS avant que le prix ne remonte.
+            Obtenez NeuroEnfants™ + 10 bonus GRATUITS avant que le prix ne remonte.
           </p>
           <p className="mt-5 text-lg text-muted-foreground">Comprend :</p>
           <ul className="mt-4 space-y-4 text-lg text-muted-foreground">
@@ -621,7 +617,7 @@ function Index() {
             Garantie 100 % tranquillité d'esprit
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">
-            Essayez NeuroKids™ pendant 7 jours.
+            Essayez NeuroEnfants™ pendant 7 jours.
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
             Si vous ne voyez pas de différence, nous vous remboursons.
