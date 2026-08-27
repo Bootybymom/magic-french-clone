@@ -517,18 +517,10 @@ function Index() {
         <section className="mt-14">
           <div className="relative">
             <img src={offer.url} alt="Enfant utilisant NeuroEnfants™" className="aspect-[4/3] w-full rounded-2xl object-cover" />
-            <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">
-              OFFRE À DURÉE LIMITÉE
-            </span>
-            <span className="absolute left-1/2 top-16 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-4 py-1.5 text-xs font-semibold shadow">
-              100+ activités + bonus GRATUITS
-            </span>
-            <span className="absolute bottom-12 right-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">
-              Aimé par plus de 3 000 parents
-            </span>
-            <span className="absolute bottom-3 left-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">
-              Téléchargement immédiat • Accès à vie • Sans écrans
-            </span>
+            <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">{'\n'}</span>
+            <span className="absolute left-1/2 top-16 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-4 py-1.5 text-xs font-semibold shadow">{'\n'}</span>
+            <span className="absolute bottom-12 right-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
+            <span className="absolute bottom-3 left-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
           </div>
 
           <h2 className="mt-8 font-display text-3xl leading-tight">
