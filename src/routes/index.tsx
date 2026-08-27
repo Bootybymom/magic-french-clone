@@ -16,7 +16,6 @@ import {
   Package,
   Heart,
 } from "lucide-react";
-import { ImageSlot } from "@/components/ImageSlot";
 import { ProductGallery } from "@/components/ProductGallery";
 import logo from "@/assets/logo.png.asset.json";
 import av1 from "@/assets/av1.jpg.asset.json";
@@ -473,19 +472,11 @@ function Index() {
             {testimonials.map((t) => (
               <figure key={t.name} className="overflow-hidden rounded-2xl border border-border">
                 <div className="relative">
-                  {t.photo ? (
-                    <img
-                      src={t.photo}
-                      alt={`Enfant utilisant NeuroEnfants™ — avis de ${t.name}`}
-                      className="aspect-[4/3] w-full object-cover"
-                    />
-                  ) : (
-                    <ImageSlot
-                      label="Photo enfant"
-                      ratio="4 / 3"
-                      className="rounded-none border-0"
-                    />
-                  )}
+                  <img
+                    src={t.photo}
+                    alt={`Enfant utilisant NeuroEnfants™ — avis de ${t.name}`}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
                   <span className="absolute -bottom-6 right-5 flex size-14 items-center justify-center rounded-full bg-primary">
                     <Quote className="size-6 fill-primary-foreground text-primary-foreground" />
                   </span>
