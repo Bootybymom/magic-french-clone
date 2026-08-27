@@ -194,6 +194,16 @@ function Stars() {
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Notification d'achat */}
+      <div className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg">
+        <img src={av1.url} alt="Camille D." className="size-10 rounded-full object-cover" />
+        <div className="text-xs">
+          <p className="font-semibold">Camille D. vient d'acheter</p>
+          <p className="text-muted-foreground">le plan à 12,90 € · il y a 2 min</p>
+        </div>
+        <Heart className="size-4 fill-primary text-primary" />
+      </div>
+
       {/* Barre d'annonce */}
       <div className="overflow-hidden bg-primary py-2.5 text-center text-sm font-bold text-primary-foreground sm:text-base">
         50 % DE RÉDUCTION — se termine ce soir à 23h59
@@ -262,7 +272,7 @@ function Index() {
         {/* Témoignage + prix */}
         <section className="mt-10">
           <div className="rounded-2xl bg-muted p-6">
-            <h3 className="text-center text-xl font-semibold">Alejandra R.</h3>
+            <h3 className="text-center text-xl font-semibold">Camille R.</h3>
             <div className="mt-3 flex justify-center">
               <span className="rounded-md bg-primary px-3 py-1 text-sm tracking-widest text-primary-foreground">
                 ★★★★★
@@ -271,7 +281,7 @@ function Index() {
             <div className="mt-4 flex items-start gap-4">
               <img
                 src={av1.url}
-                alt="Alejandra R."
+                alt="Camille R."
                 className="size-20 shrink-0 rounded-full object-cover"
               />
 
