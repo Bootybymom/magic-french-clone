@@ -97,19 +97,19 @@ const compareRows = [
 const testimonials = [
   {
     text: "Mon enfant avait du mal à se concentrer… maintenant il demande lui-même à faire ces activités tous les jours. Je ne l'ai jamais vu aussi motivé.",
-    name: "Sarah F.",
+    name: "Sophie F.",
     photo: kid1.url,
     avatar: av2.url,
   },
   {
     text: "Le meilleur achat que j'ai fait pour mon enfant. Il est passé de la frustration à tout terminer avec le sourire.",
-    name: "Lauren M.",
+    name: "Léa M.",
     photo: kid2.url,
     avatar: av3.url,
   },
   {
     text: "Je pensais que rien ne fonctionnerait… mais en quelques jours seulement, mon enfant est passé d'une frustration constante au calme, à la concentration et au vrai plaisir d'apprendre !",
-    name: "Lilly S.",
+    name: "Manon S.",
     photo: kid3.url,
     avatar: av6.url,
   },
@@ -194,6 +194,16 @@ function Stars() {
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Notification d'achat */}
+      <div className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg">
+        <img src={av1.url} alt="Camille D." className="size-10 rounded-full object-cover" />
+        <div className="text-xs">
+          <p className="font-semibold">Camille D. vient d'acheter</p>
+          <p className="text-muted-foreground">le plan à 12,90 € · il y a 2 min</p>
+        </div>
+        <Heart className="size-4 fill-primary text-primary" />
+      </div>
+
       {/* Barre d'annonce */}
       <div className="overflow-hidden bg-primary py-2.5 text-center text-sm font-bold text-primary-foreground sm:text-base">
         50 % DE RÉDUCTION — se termine ce soir à 23h59
@@ -262,7 +272,7 @@ function Index() {
         {/* Témoignage + prix */}
         <section className="mt-10">
           <div className="rounded-2xl bg-muted p-6">
-            <h3 className="text-center text-xl font-semibold">Alejandra R.</h3>
+            <h3 className="text-center text-xl font-semibold">Camille R.</h3>
             <div className="mt-3 flex justify-center">
               <span className="rounded-md bg-primary px-3 py-1 text-sm tracking-widest text-primary-foreground">
                 ★★★★★
@@ -271,7 +281,7 @@ function Index() {
             <div className="mt-4 flex items-start gap-4">
               <img
                 src={av1.url}
-                alt="Alejandra R."
+                alt="Camille R."
                 className="size-20 shrink-0 rounded-full object-cover"
               />
 
@@ -517,10 +527,6 @@ function Index() {
         <section className="mt-14">
           <div className="relative">
             <img src={offer.url} alt="Enfant utilisant NeuroEnfants™" className="aspect-[4/3] w-full rounded-2xl object-cover" />
-            <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-card px-5 py-2 text-sm font-bold shadow-md">{'\n'}</span>
-            <span className="absolute left-1/2 top-16 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-4 py-1.5 text-xs font-semibold shadow">{'\n'}</span>
-            <span className="absolute bottom-12 right-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
-            <span className="absolute bottom-3 left-3 rounded-md bg-card px-3 py-1 text-xs font-medium shadow">{'\n'}</span>
           </div>
 
           <h2 className="mt-8 font-display text-3xl leading-tight">
