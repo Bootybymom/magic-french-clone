@@ -34,11 +34,11 @@ import offer from "@/assets/offer2.png.asset.json";
 const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 
 const purchaseNotifications = [
-  { name: "Élodie T.", avatar: av1.url, time: "il y a 2 min" },
-  { name: "Chloé B.", avatar: av2.url, time: "il y a 5 min" },
-  { name: "Inès M.", avatar: av3.url, time: "il y a 7 min" },
-  { name: "Clara D.", avatar: av4.url, time: "il y a 9 min" },
-  { name: "Mathilde G.", avatar: av5.url, time: "il y a 12 min" },
+  { name: "Élodie T.", time: "il y a 2 min" },
+  { name: "Chloé B.", time: "il y a 5 min" },
+  { name: "Inès M.", time: "il y a 7 min" },
+  { name: "Clara D.", time: "il y a 9 min" },
+  { name: "Mathilde G.", time: "il y a 12 min" },
 ];
 
 function PurchaseNotification() {
@@ -62,12 +62,13 @@ function PurchaseNotification() {
     <div
       className={`fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
     >
-      <img src={n.avatar} alt={n.name} className="size-10 rounded-full object-cover" />
+      <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft">
+        <Heart className="size-5 fill-primary text-primary" />
+      </div>
       <div className="text-xs">
         <p className="font-semibold">{n.name} vient d'acheter</p>
         <p className="text-muted-foreground">le plan à 12,90 € · {n.time}</p>
       </div>
-      <Heart className="size-4 fill-primary text-primary" />
     </div>
   );
 }
@@ -329,7 +330,7 @@ function Index() {
 
           <div className="mt-6 flex flex-wrap items-baseline gap-3">
             <span className="font-display text-3xl font-bold text-primary">7,90 €</span>
-            <span className="text-2xl font-bold text-muted-foreground line-through">89,97 €</span>
+            <span className="text-2xl font-bold text-muted-foreground line-through">23,24 €</span>
           </div>
           <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
             <Tag className="size-4" />
@@ -346,11 +347,11 @@ function Index() {
               <span className="size-5 shrink-0 rounded-full border-2 border-primary" />
               <span className="flex-1">
                 <span className="block text-lg font-bold">NeuroEnfants Focus System</span>
-                <span className="block text-muted-foreground">Économisez 59,98 €</span>
+                <span className="block text-muted-foreground">Économisez 15,34 €</span>
               </span>
               <span className="text-right">
                 <span className="block text-xl font-bold text-primary">7,90 €</span>
-                <span className="block text-muted-foreground line-through">89,97 €</span>
+                <span className="block text-muted-foreground line-through">23,24 €</span>
               </span>
             </label>
 
@@ -366,11 +367,11 @@ function Index() {
                   <span className="block text-lg font-bold">
                     Focus System + Intelligence Émotionnelle
                   </span>
-                  <span className="block text-muted-foreground">Économisez 134,96 €</span>
+                  <span className="block text-muted-foreground">Économisez 25,04 €</span>
                 </span>
                 <span className="text-right">
                   <span className="block text-xl font-bold text-primary">12,90 €</span>
-                  <span className="block text-muted-foreground line-through">179,94 €</span>
+                  <span className="block text-muted-foreground line-through">37,94 €</span>
                 </span>
               </label>
             </div>
