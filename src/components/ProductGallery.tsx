@@ -11,7 +11,7 @@ import gal7 from "@/assets/gal7.webp.asset.json";
 import gal8 from "@/assets/gal8.png.asset.json";
 
 const images = [
-  { url: gal1.url, alt: "Système Focus NeuroKids™ — plus de 100 activités imprimables" },
+  { url: gal1.url, alt: "Système Focus NeuroEnfants™ — +180 activités imprimables" },
   { url: gal2.url, alt: "Approuvé par plus de 10 000 familles" },
   { url: gal3.url, alt: "Activité de concentration avec des cercles de couleur" },
   { url: gal4.url, alt: "Enfant réalisant une activité NeuroKids™" },

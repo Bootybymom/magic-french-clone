@@ -79,17 +79,17 @@ import gal8 from "@/assets/gal8.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NeuroEnfants™ — +100 activités pour l'attention et la concentration" },
+      { title: "NeuroEnfants™ — +180 activités pour l'attention et la concentration" },
       {
         name: "description",
         content:
-          "NeuroEnfants™ Focus System : plus de 100 activités imprimables pour aider votre enfant à se concentrer, apprendre et gagner en confiance en 10 minutes par jour.",
+          "NeuroEnfants™ Focus System : plus de 180 activités imprimables pour aider votre enfant à se concentrer, apprendre et gagner en confiance en 10 minutes par jour.",
       },
       { property: "og:title", content: "NeuroEnfants™ Focus System — Concentration par le jeu" },
       {
         property: "og:description",
         content:
-          "Transformez la distraction en concentration grâce au jeu. Plus de 100 activités simples, 100 % sans écran.",
+          "Transformez la distraction en concentration grâce au jeu. Plus de 180 activités simples, 100 % sans écran.",
       },
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -177,7 +177,7 @@ const includedExtras = [
 
 const offerIncludes = [
   "Accès immédiat",
-  "Plus de 100 activités imprimables",
+  "Plus de 180 activités imprimables",
   "10 ressources bonus",
   "Utilisation à vie",
 ];
@@ -233,6 +233,7 @@ function Stars() {
 }
 
 function Index() {
+  const [plan, setPlan] = useState<"focus" | "complete">("complete");
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Notification d'achat */}
@@ -282,7 +283,7 @@ function Index() {
           </div>
 
           <h1 className="mt-6 font-display text-3xl leading-tight sm:text-4xl">
-            NeuroEnfants™ +100 activités pour booster l'attention, la concentration et
+            NeuroEnfants™ +180 activités pour booster l'attention, la concentration et
             l'apprentissage
           </h1>
         </section>
@@ -344,9 +345,16 @@ function Index() {
           {/* Offres */}
           <div className="mt-4 space-y-4">
             <label className="flex cursor-pointer items-center gap-4 rounded-xl border border-primary/40 bg-primary-soft/40 p-5">
-              <span className="size-5 shrink-0 rounded-full border-2 border-primary" />
+              <input
+                type="radio"
+                name="plan"
+                value="focus"
+                checked={plan === "focus"}
+                onChange={() => setPlan("focus")}
+                className="size-5 shrink-0 accent-primary"
+              />
               <span className="flex-1">
-                <span className="block text-lg font-bold">NeuroEnfants Focus System</span>
+                <span className="block text-lg font-bold">+180 activités NeuroEnfants Focus System</span>
                 <span className="block text-muted-foreground">Économisez 15,34 €</span>
               </span>
               <span className="text-right">
@@ -360,12 +368,17 @@ function Index() {
                 Le plus populaire
               </span>
               <label className="flex cursor-pointer items-center gap-4 rounded-xl border-2 border-primary bg-primary-soft/40 p-5">
-                <span className="flex size-5 shrink-0 items-center justify-center rounded-full border-2 border-primary">
-                  <span className="size-2.5 rounded-full bg-primary" />
-                </span>
+                <input
+                  type="radio"
+                  name="plan"
+                  value="complete"
+                  checked={plan === "complete"}
+                  onChange={() => setPlan("complete")}
+                  className="size-5 shrink-0 accent-primary"
+                />
                 <span className="flex-1">
                   <span className="block text-lg font-bold">
-                    Focus System + Intelligence Émotionnelle
+                    +300 activités Focus System + Intelligence Émotionnelle
                   </span>
                   <span className="block text-muted-foreground">Économisez 25,04 €</span>
                 </span>
@@ -377,7 +390,17 @@ function Index() {
             </div>
           </div>
 
-          <button className="mt-8 w-full rounded-xl bg-primary py-5 font-display text-2xl font-bold tracking-wide text-primary-foreground transition-opacity hover:opacity-90">
+          <button
+            type="button"
+            onClick={() => {
+              const url =
+                plan === "focus"
+                  ? "https://pay.hotmart.com/F107521759I?checkoutMode=10"
+                  : "https://pay.hotmart.com/R107614911I?checkoutMode=10";
+              window.location.href = url;
+            }}
+            className="mt-8 w-full rounded-xl bg-primary py-5 font-display text-2xl font-bold tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+          >
             AJOUTER AU PANIER
           </button>
 
@@ -544,7 +567,7 @@ function Index() {
           <h2 className="mt-10 font-display text-3xl leading-tight">
             Tout ce que votre enfant reçoit avec <strong>NeuroEnfants™</strong>
           </h2>
-          <p className="mt-5 text-xl font-bold">Plus de 100 activités incluses :</p>
+          <p className="mt-5 text-xl font-bold">Plus de 180 activités incluses :</p>
           <ul className="mt-5 space-y-4 text-lg text-muted-foreground">
             {includedList.map((t) => (
               <li key={t}>{t}</li>
@@ -582,7 +605,7 @@ function Index() {
 
         {/* Pourquoi choisir */}
         <section className="mt-14 text-center">
-          <h2 className="font-display text-3xl leading-tight">POURQUOI CHOISIR NEUROKIDS™</h2>
+          <h2 className="font-display text-3xl leading-tight">POURQUOI CHOISIR NEUROENFANTS™</h2>
           <div className="mt-8 space-y-10">
             {[
               {
