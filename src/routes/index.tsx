@@ -28,8 +28,8 @@ import av6 from "@/assets/av6.jpg.asset.json";
 import kid1 from "@/assets/kid1.webp.asset.json";
 import kid2 from "@/assets/kid2.webp.asset.json";
 import kid3 from "@/assets/kid3.webp.asset.json";
-import inside from "@/assets/inside.png.asset.json";
-import offer from "@/assets/offer2.png.asset.json";
+import inside from "@/assets/inside3.png.asset.json";
+import offer from "@/assets/offer3.png.asset.json";
 
 const bandAvatars = [av1.url, av2.url, av3.url, av4.url, av5.url];
 
@@ -60,7 +60,7 @@ function PurchaseNotification() {
 
   return (
     <div
-      className={`fixed right-4 top-4 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`fixed right-4 top-24 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft">
         <Heart className="size-5 fill-primary text-primary" />
@@ -240,8 +240,14 @@ function Index() {
       <PurchaseNotification />
 
       {/* Barre d'annonce */}
-      <div className="overflow-hidden bg-primary py-2.5 text-center text-sm font-bold text-primary-foreground sm:text-base">
-        50 % DE RÉDUCTION — se termine ce soir à 23h59
+      <div className="overflow-hidden bg-primary py-2.5 text-sm font-bold text-primary-foreground sm:text-base">
+        <div className="marquee">
+          <span className="marquee-track">
+            <span className="px-8">50 % DE RÉDUCTION — se termine ce soir à 23h59 (plus que 4 en stock)</span>
+            <span className="px-8">50 % DE RÉDUCTION — se termine ce soir à 23h59 (plus que 4 en stock)</span>
+            <span className="px-8">50 % DE RÉDUCTION — se termine ce soir à 23h59 (plus que 4 en stock)</span>
+          </span>
+        </div>
       </div>
 
       {/* En-tête */}

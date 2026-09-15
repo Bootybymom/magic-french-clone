@@ -172,3 +172,19 @@
   border: 1px dashed var(--border);
   border-radius: var(--radius);
 }
+
+@utility marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@utility marquee-track {
+  display: inline-flex;
+  min-width: 100%;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
+}
