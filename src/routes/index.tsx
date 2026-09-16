@@ -60,14 +60,15 @@ function PurchaseNotification() {
 
   return (
     <div
+      data-notification
       className={`fixed right-4 top-24 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft">
         <Heart className="size-5 fill-primary text-primary" />
       </div>
       <div className="text-xs">
-        <p className="font-semibold">{n.name} vient d'acheter</p>
-        <p className="text-muted-foreground">le plan à 12,90 € · {n.time}</p>
+        <p className="font-semibold" data-notification-name>{n.name} vient d'acheter</p>
+        <p className="text-muted-foreground" data-notification-meta>le plan à 12,90 € · {n.time}</p>
       </div>
     </div>
   );
@@ -398,6 +399,7 @@ function Index() {
 
           <button
             type="button"
+            data-checkout
             onClick={() => {
               const url =
                 plan === "focus"
