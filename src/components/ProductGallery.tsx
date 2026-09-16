@@ -26,9 +26,10 @@ export function ProductGallery() {
   const go = (dir: number) => setIndex((i) => (i + dir + images.length) % images.length);
 
   return (
-    <div>
+    <div data-gallery>
       <div className="relative overflow-hidden rounded-2xl bg-card">
         <img
+          data-gallery-main
           src={images[index]!.url}
           alt={images[index]!.alt}
           className="aspect-square w-full object-cover"
@@ -36,6 +37,7 @@ export function ProductGallery() {
         <button
           type="button"
           aria-label="Image précédente"
+          data-gallery-prev
           onClick={() => go(-1)}
           className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 shadow-md backdrop-blur"
         >
@@ -44,6 +46,7 @@ export function ProductGallery() {
         <button
           type="button"
           aria-label="Image suivante"
+          data-gallery-next
           onClick={() => go(1)}
           className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 shadow-md backdrop-blur"
         >
@@ -58,6 +61,9 @@ export function ProductGallery() {
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Voir l'image ${i + 1}`}
+            data-gallery-thumb
+            data-url={img.url}
+            data-alt={img.alt}
             className={`w-16 shrink-0 overflow-hidden rounded-xl border-2 transition ${
               i === index ? "border-primary" : "border-border"
             }`}
