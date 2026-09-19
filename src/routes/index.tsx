@@ -52,7 +52,7 @@ function PurchaseNotification() {
         setIndex((i) => (i + 1) % purchaseNotifications.length);
         setVisible(true);
       }, 400);
-    }, 10000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -61,7 +61,7 @@ function PurchaseNotification() {
   return (
     <div
       data-notification
-      className={`fixed right-4 top-24 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`fixed right-4 top-16 z-50 flex items-center gap-3 rounded-xl border bg-card p-3 pr-4 shadow-lg transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-soft">
         <Heart className="size-5 fill-primary text-primary" />
